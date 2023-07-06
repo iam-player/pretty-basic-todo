@@ -26,10 +26,7 @@
 .todo__header--button{
     width: 15%;
     height: 100%;
-    background-color: $accentColor;
-    color: $lightColor;
-    border-radius: 10px;
-    text-align: center;
+    @include accentButton();
     float: right;
 
     &:hover{
@@ -48,18 +45,24 @@
     ul{
         width: 100%;
         padding: 0 10px;
-    }
 
-    ul li{
-        margin: 10px 0;
-        border-radius: 10px;
-        color: white;
-        padding: 5px 10px;
-        background: $grayColor;
+        li{
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 10px 0;
+            border-radius: 10px;
+            color: white;
+            padding: 5px 10px;
+            background: $grayColor;
 
-        &:before{
-            content: "";
-            margin-right: 10px;
+            span{
+                justify-content: flex-end;
+            }
+        }
+
+        button{
+            @include accentButton();
+
         }
     }
 }

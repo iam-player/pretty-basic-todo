@@ -8,3 +8,10 @@
     font-family: 'Poppins';
     font-weight: 500;
 }
+
+@mixin accentButton(){
+    background-color: $accentColor;
+    color: $lightColor;
+    border-radius: 10px;
+    text-align: center;
+}

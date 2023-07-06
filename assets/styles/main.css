@@ -91,15 +91,22 @@ button, input, form {
   padding: 0 10px;
 }
 .todo__body--container ul li {
+  flex-direction: row;
+  justify-content: space-between;
   margin: 10px 0;
   border-radius: 10px;
   color: white;
   padding: 5px 10px;
   background: #1a1a1a;
 }
-.todo__body--container ul li:before {
-  content: "";
-  margin-right: 10px;
+.todo__body--container ul li span {
+  justify-content: flex-end;
+}
+.todo__body--container ul button {
+  background-color: #8000ff;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
 }
 
 body {
