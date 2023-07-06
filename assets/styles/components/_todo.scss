@@ -1,0 +1,48 @@
+@import '../base/variables';
+@import '../util/mixins';
+
+.todo__header--container{
+    height: 50px;
+    width: 350px;
+    background-color: $darkColor;
+    margin-bottom: 10px;
+    border-radius: 10px;;
+    display: flex;
+    flex-direction: row;
+}
+
+.todo__header--input{
+    width: 80%;
+    height: 100%;
+    background-color: $darkColor;
+    border-radius: 10px;
+    color: $lightColor;
+    padding-left: 14px;
+    font-size: 1.2rem;
+
+    &:focus{
+        color: red;
+    }
+} 
+
+.todo__header--button{
+    width: 20%;
+    height: 100%;
+    background-color: $accentColor;
+    color: $lightColor;
+    border-radius: 10px;
+    text-align: center;
+
+    &:hover{
+        filter: brightness(1.2);
+        transition: .2s ease;
+    }
+}
+
+.todo__body--container{
+    height: 500px;
+    width: 350px;
+    display: flex;
+    background-color: $darkColor;
+    border-radius: 10px;
+}
