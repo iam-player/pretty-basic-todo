@@ -203,13 +203,11 @@ button.todo__header--button:hover {
 #modal {
   visibility: hidden;
   position: absolute;
+  margin-bottom: 130px;
+  z-index: 999;
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: 10%;
-  z-index: 999;
-  left: 50%;
-  transform: translateX(-50%);
 }
 #modal form {
   height: 100px;

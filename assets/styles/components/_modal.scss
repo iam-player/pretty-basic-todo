@@ -9,11 +9,9 @@
 #modal{
     visibility: hidden;
     position: absolute;
-    @include flexCenter();
-    bottom: 10%;
+    margin-bottom: 130px;
     z-index: 999;
-    left: 50%;
-    transform: translateX(-50%);
+    @include flexCenter();
 
     form{
         height: 100px;
