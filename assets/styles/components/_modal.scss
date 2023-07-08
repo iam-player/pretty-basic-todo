@@ -1,0 +1,49 @@
+@use '../base/variables';
+@use '../util/mixins';
+
+.show{
+    visibility: visible !important;
+    backdrop-filter: blur(1px);
+}
+
+#modal{
+    visibility: hidden;
+    position: absolute;
+    @include flexCenter();
+    bottom: 10%;
+    z-index: 999;
+    left: 50%;
+    transform: translateX(-50%);
+
+    form{
+        height: 100px;
+        width: 300px;
+        @include flexCenter();
+        background-color: $darkColor;
+        border: 1px solid $accentColor;
+        color: $lightColor;
+        font-size: 20px;
+        border-radius: 10px;
+        flex-direction: column;
+        
+        h2{
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        div.form__buttons{
+            display: flex;
+            flex-direction: row;
+        }
+
+        button{
+            @include accentButton();
+            padding: 5px 10px;
+            margin: 5px;
+
+            &:hover{
+                @include hover();
+            }
+        }
+    }
+}

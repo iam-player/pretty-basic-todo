@@ -10,11 +10,11 @@
   </head>
   <body>
     <main>
-      <h1>co masz zrobić jutro, zrób dziś.</h1>
+      <h1>never put off till tomorrow<br>what you can do today.</h1>
       <div class="todo__header--container">
         
         <form id="todo">
-          <input class="todo__header--input" type="text" id="input" placeholder="Task.." />
+          <input class="todo__header--input" type="text" id="input" placeholder="Today I will.." />
           <button class="todo__header--button" type="text" id="add">Add</button>
         </form>
       </div>
@@ -25,7 +25,16 @@
         </ul>
       </div>
       <div class="todo__footer--container">
-        <button class="todo__footer--button" type="text" id="remove-all">Remove All Tasks</button>
+        <dialog id="modal">
+          <form method="dialog">
+            <h2>Remove all tasks?</h2>
+            <div class="form__buttons">
+              <button class="todo__dialogtodo__dialog--confirm" id="modalConfirm">Yes</button>
+              <button class="todo__dialog--cancel" id="modalCancel">No</button>
+            </div>
+          </form>
+        </dialog>
+        <button class="todo__footer--button" type="text" id="removeAll">Remove All Tasks</button>
       </div>
     </main>
 

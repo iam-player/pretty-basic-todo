@@ -18,4 +18,5 @@
 
 @mixin hover(){
     transition: 0.2s ease;
+    filter: brightness(1.2);
 }

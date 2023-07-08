@@ -41,14 +41,16 @@ a {
   text-decoration: none;
 }
 
-button, input, form {
+button, input, form, dialog {
   all: unset;
 }
 
 h1 {
   color: white;
-  font-size: 20px;
+  font-size: 14px;
   margin: 30px 0;
+  text-align: center;
+  font-weight: 500;
 }
 
 .todo__header--container {
@@ -97,9 +99,9 @@ button.todo__header--button:hover {
   margin: 10px 0;
 }
 .todo__body--container .completed {
-  color: #717171;
+  color: #717171 !important;
   text-decoration: line-through;
-  background-color: #1a1a1a !important;
+  background-color: #1f1f1f !important;
 }
 .todo__body--container ul {
   width: 100%;
@@ -120,7 +122,7 @@ button.todo__header--button:hover {
           user-select: none;
   display: flex;
   flex-direction: row;
-  margin: 10px 0;
+  margin: 5px 0;
   border-radius: 10px;
   color: white;
   background: #8000ff;
@@ -129,6 +131,7 @@ button.todo__header--button:hover {
 .todo__body--container ul .task__container li:hover {
   filter: brightness(1.2);
   transition: 0.2s ease;
+  filter: brightness(1.2);
 }
 .todo__body--container ul .task__container span {
   padding: 0 0 0 10px;
@@ -149,6 +152,7 @@ button.todo__header--button:hover {
 .todo__body--container ul .task__container span:hover {
   color: rgb(255, 198, 198);
   transition: 0.2s ease;
+  filter: brightness(1.2);
 }
 .todo__body--container ul .task__container button {
   background-color: #8000ff;
@@ -167,12 +171,64 @@ button.todo__header--button:hover {
   flex-direction: row;
 }
 .todo__footer--container .todo__footer--button {
-  font-size: 16px;
+  font-size: 12px;
   color: white;
 }
 .todo__footer--container .todo__footer--button:hover {
   transition: 0.2s ease;
+  filter: brightness(1.2);
   color: red;
+}
+
+.show {
+  visibility: visible !important;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+}
+
+#modal {
+  visibility: hidden;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 10%;
+  z-index: 999;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#modal form {
+  height: 100px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #141414;
+  border: 1px solid #8000ff;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+  flex-direction: column;
+}
+#modal form h2 {
+  font-weight: 500;
+  font-size: 16px;
+}
+#modal form div.form__buttons {
+  display: flex;
+  flex-direction: row;
+}
+#modal form button {
+  background-color: #8000ff;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px 10px;
+  margin: 5px;
+}
+#modal form button:hover {
+  transition: 0.2s ease;
+  filter: brightness(1.2);
 }
 
 body {
