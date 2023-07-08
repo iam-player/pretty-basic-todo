@@ -128,11 +128,6 @@ button.todo__header--button:hover {
   transition: 0.2s ease;
   filter: brightness(1.2);
 }
-.todo__body--container ul .task__container li::before {
-  content: "❌";
-  width: 20px;
-  margin-right: 5px;
-}
 .todo__body--container ul .task__container li.completed {
   color: #717171 !important;
   background-color: #1f1f1f !important;

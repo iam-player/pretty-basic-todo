@@ -77,12 +77,6 @@ button.todo__header--button{
                     @include hover();
                 }
 
-                &::before{
-                    content: "\274C";
-                    width: 20px;
-                    margin-right: 5px;
-                }
-
                 &.completed{
                     color: $lightGrayColor !important;
                     background-color: $grayColor !important;
