@@ -23,11 +23,12 @@
     font-size: 1.2rem;
 } 
 
-.todo__header--button{
+button.todo__header--button{
     width: 15%;
     height: 100%;
     @include accentButton();
     float: right;
+    user-select: none;
 
     &:hover{
         filter: brightness(1.2);
@@ -42,27 +43,61 @@
     background-color: $darkColor;
     border-radius: 10px;
 
+    .completed{
+        color: #717171;
+        text-decoration: line-through;
+    }
+
     ul{
         width: 100%;
         padding: 0 10px;
 
-        li{
-            flex-direction: row;
+        .task__container{
+            width: 100%;
             justify-content: space-between;
-            margin: 10px 0;
-            border-radius: 10px;
-            color: white;
-            padding: 5px 10px;
-            background: $grayColor;
+            display: flex;
+            flex-direction: row;
+            
+            li{
+                padding: 5px 10px;
+                width: 100%;
+                user-select: none;
+                display: flex;
+                flex-direction: row;
+                margin: 10px 0;
+                border-radius: 10px;
+                color: white;
+                background: $grayColor;
+                justify-content: space-between;
+    
+                &:hover{
+                    filter: brightness(1.2);
+                    @include hover();
+                }
+            }
 
             span{
-                justify-content: flex-end;
+                padding: 5px 10px;
+                position: relative;
+                user-select: none;
+                border-radius: 50%;
+                text-align: center;
+                background-color: $darkColor;
+                color: $lightColor;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+
+                &:hover{
+                    color: rgb(255, 198, 198);
+                    @include hover();
+                }
             }
-        }
-
-        button{
-            @include accentButton();
-
+    
+            button{
+                @include accentButton();
+            }
         }
     }
 }

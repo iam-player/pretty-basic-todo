@@ -5,30 +5,40 @@ let remove = document.getElementById("remove");
 let tasksList = document.getElementById("list");
 let tasks = [];
 
+
 const addTaskToList = input => {
     tasksList.value = "";
-    tasksList.innerHTML += '<li>'+input+'<span>X</span></li>';
+    tasksList.innerHTML += '<div class="task__container"><li>'+input+'</li><span>x</span></div>';
     tasks.push(input);
 };
+
+const saveTasksToLocal = () => {
+    localStorage.setItem("tasks-data", tasksList.innerHTML);
+}
+
+const loadTasksFromLocal = () => {
+    tasksList.innerHTML = localStorage.getItem("tasks-data");
+}
+
+loadTasksFromLocal();
 
 add.addEventListener("click", (e) => {
     e.preventDefault();
 
     if(!(input.value === "" || input.value === null)){
         addTaskToList(input.value);
+        saveTasksToLocal();
+        input.value = "";
     } else {
         throw new Error ("User input is empty! Cannot add a task.");
     }
 });
 
 tasksList.addEventListener("click", (e) => {
-    e.preventDefault();
 
     if(e.target.tagName === "LI"){
-        console.log("li");
+        e.target.classList.toggle("completed");
     } else if (e.target.tagName === "SPAN"){
         e.target.parentElement.remove();
-        console.log("removing");
     }
-    
 });
