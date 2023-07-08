@@ -6,8 +6,7 @@ let modal = document.getElementById("modal");
 let modalConfirm = document.getElementById("modalConfirm");
 let modalCancel = document.getElementById("modalCancel");
 let tasksList = document.getElementById("list");
-tasksList.innerHTML += "<p>You haven't added any tasks yet.</p>";
-let tasks = [];
+let emptyTaskList = document.getElementById("emptyTaskList");
 
 const addTaskToList = input => {
     tasksList.value = "";
@@ -20,6 +19,11 @@ const saveTasksToLocal = () => {
 
 const loadTasksFromLocal = () => {
     tasksList.innerHTML = localStorage.getItem("tasks-data");
+    if(!tasksList.children.length){
+        emptyTaskList.classList.add('show');
+    } else {
+        emptyTaskList.classList.remove('show');
+    }
 }
 
 const removeAllFromLocal = () =>{
@@ -30,11 +34,11 @@ loadTasksFromLocal();
 
 add.addEventListener("click", (e) => {
     e.preventDefault();
-
     if(!(input.value === "" || input.value === null)){
         addTaskToList(input.value);
         saveTasksToLocal();
         input.value = "";
+        loadTasksFromLocal();
     } else {
         throw new Error ("User input is empty! Cannot add a task.");
     }
@@ -46,6 +50,7 @@ tasksList.addEventListener("click", (e) => {
     } else if (e.target.tagName === "SPAN"){
         e.target.parentElement.remove();
         saveTasksToLocal();
+        loadTasksFromLocal();
     }
 });
 
@@ -63,7 +68,7 @@ modalConfirm.addEventListener("click", (e) =>{
 
     //remove local storage => reload
     removeAllFromLocal();
-    location.reload();
+    loadTasksFromLocal();
 });
 
 modalCancel.addEventListener("click", (e) =>{

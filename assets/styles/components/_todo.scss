@@ -25,7 +25,7 @@ h1{
     border-radius: 10px;
     color: $lightColor;
     padding-left: 14px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 } 
 
 button.todo__header--button{
@@ -42,18 +42,25 @@ button.todo__header--button{
 }
 
 .todo__body--container{
-    height: 500px;
+    min-height: 350px;
     width: 350px;
     display: flex;
     background-color: $darkColor;
     border-radius: 10px;
     margin: 10px 0;
 
-
+    p{
+        visibility: hidden;
+        position: absolute;
+        font-size: 14px;
+        margin-top: 10px;
+        margin-left: 15px;
+        color: white;
+    }
 
     ul{
         width: 100%;
-        padding: 0 10px;
+        padding: 10px;
 
         .task__container{
             width: 100%;
@@ -62,6 +69,7 @@ button.todo__header--button{
             flex-direction: row;
             
             li{
+                min-height: 34px;
                 padding: 5px 10px;
                 width: 100%;
                 user-select: none;
@@ -94,16 +102,14 @@ button.todo__header--button{
 
             span{
                 padding: 0 0 0 10px;
-                position: relative;
                 user-select: none;
                 border-radius: 50%;
                 text-align: center;
-                background-color: $darkColor;
                 color: $lightColor;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                font-weight: bold;
+                font-weight: 500;
 
                 &:hover{
                     color: rgb(255, 0, 0);

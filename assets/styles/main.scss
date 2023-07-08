@@ -9,14 +9,15 @@
 
 body{
     @include fontFamily();
-    max-height: 100vh;
+    background-color: #000;
 }
 
 main{
-    height: 100vh;
     width: 100%;
     @include flexCenter();
-    background-color: #000;
     flex-direction: column;
 }
 
+section{
+    margin: 0 20px;
+}

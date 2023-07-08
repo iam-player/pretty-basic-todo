@@ -11,20 +11,18 @@
   <body>
     <main>
       <h1>never put off till tomorrow<br>what you can do today.</h1>
-      <div class="todo__header--container">
+      <section class="todo__header--container">
         
         <form id="todo">
-          <input class="todo__header--input" type="text" id="input" placeholder="Today I will.." />
+          <input class="todo__header--input" type="text" id="input" placeholder="My dear diary, today I will.." />
           <button class="todo__header--button" type="text" id="add">Add</button>
         </form>
-      </div>
-      <div class="todo__body--container">
-        
-        <ul class="todo__body--list" id="list">
-          
-        </ul>
-      </div>
-      <div class="todo__footer--container">
+      </section>
+      <section class="todo__body--container">
+        <p id="emptyTaskList">There is so much to do...<br>Should this list be empty?<br></p>
+        <ul class="todo__body--list" id="list"></ul>
+      </section>
+      <section class="todo__footer--container">
         <dialog id="modal">
           <form method="dialog">
             <h2>Remove all tasks?</h2>
@@ -35,7 +33,7 @@
           </form>
         </dialog>
         <button class="todo__footer--button" type="text" id="removeAll">Remove All Tasks</button>
-      </div>
+      </section>
     </main>
 
     <script src="./assets/scripts/todo.js"></script>
