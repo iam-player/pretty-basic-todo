@@ -44,6 +44,10 @@ add.addEventListener("click", (e) => {
     } else {
         input.classList.add("error");
         input.classList.add("bounce");
+
+        let heyWakeUp = document.getElementById("audio");
+        heyWakeUp.play();
+        
         setTimeout(function(){
             input.classList.remove("bounce");
         }, 2000);
