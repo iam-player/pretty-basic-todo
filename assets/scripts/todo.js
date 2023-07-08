@@ -39,8 +39,8 @@ add.addEventListener("click", (e) => {
     if(!(input.value === "" || input.value === null)){
         addTaskToList(input.value);
         saveTasksToLocal();
-        input.value = "";
         loadTasksFromLocal();
+        input.value = "";
     } else {
         input.classList.add("error");
         input.classList.add("bounce");
@@ -55,14 +55,14 @@ add.addEventListener("click", (e) => {
 });
 
 with (input){
-    input.classList.remove("error");
     onblur = function(e) {
         let elem = e.target;
         setTimeout(function(){
-            elem.focus()
+            elem.focus();
         });
     }
     onkeydown = function(e) {
+        input.classList.remove("error");
         let key = e.which || e.keyCode;
         if (key == 9) e.preventDefault();
     }
