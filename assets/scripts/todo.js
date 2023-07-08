@@ -63,26 +63,17 @@ tasksList.addEventListener("click", (e) => {
 });
 
 removeAll.addEventListener("click", () =>{
-    //show modal with option buttons
     modal.classList.add('show');
 });
 
 modalConfirm.addEventListener("click", (e) =>{
-    //prevent subbmiting of a dialog form
     e.preventDefault();
-
-    //hide modal, remove class
     modal.classList.remove('show');
-
-    //remove local storage => reload
-    removeAllFromLocal();
+    removeAllgiFromLocal();
     loadTasksFromLocal();
 });
 
 modalCancel.addEventListener("click", (e) =>{
-    //prevent subbmiting of a dialog form
     e.preventDefault();
-
-    //hide modal, remove class
     modal.classList.remove('show');
 });
