@@ -8,6 +8,8 @@ let modalCancel = document.getElementById("modalCancel");
 let tasksList = document.getElementById("list");
 let emptyTaskList = document.getElementById("emptyTaskList");
 
+input.focus();
+
 const addTaskToList = input => {
     tasksList.value = "";
     tasksList.innerHTML += '<div class="task__container"><li>'+input+'</li><span>x</span></div>';
@@ -48,9 +50,19 @@ add.addEventListener("click", (e) => {
     }
 });
 
-input.addEventListener("keydown", (e) =>{
+with (input){
     input.classList.remove("error");
-});
+    onblur = function(e) {
+        let elem = e.target;
+        setTimeout(function(){
+            elem.focus()
+        });
+    }
+    onkeydown = function(e) {
+        let key = e.which || e.keyCode;
+        if (key == 9) e.preventDefault();
+    }
+};
 
 tasksList.addEventListener("click", (e) => {
     if(e.target.tagName === "LI"){

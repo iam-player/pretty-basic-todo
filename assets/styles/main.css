@@ -106,9 +106,11 @@ button.todo__header--button:hover {
   visibility: hidden;
   position: absolute;
   font-size: 14px;
-  margin-top: 10px;
-  margin-left: 15px;
+  margin: 15px;
+  margin-top: 30px;
   color: white;
+  text-align: center;
+  width: 335px;
 }
 .todo__body--container ul {
   width: 100%;
