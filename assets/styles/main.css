@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 *,
 *::before,
@@ -98,11 +99,6 @@ button.todo__header--button:hover {
   border-radius: 10px;
   margin: 10px 0;
 }
-.todo__body--container .completed {
-  color: #717171 !important;
-  text-decoration: line-through;
-  background-color: #1f1f1f !important;
-}
 .todo__body--container ul {
   width: 100%;
   padding: 0 10px;
@@ -126,12 +122,28 @@ button.todo__header--button:hover {
   border-radius: 10px;
   color: white;
   background: #8000ff;
-  justify-content: space-between;
 }
 .todo__body--container ul .task__container li:hover {
   filter: brightness(1.2);
   transition: 0.2s ease;
   filter: brightness(1.2);
+}
+.todo__body--container ul .task__container li::before {
+  content: "❌";
+  width: 20px;
+  margin-right: 5px;
+}
+.todo__body--container ul .task__container li.completed {
+  color: #717171 !important;
+  background-color: #1f1f1f !important;
+}
+.todo__body--container ul .task__container li.completed::before {
+  content: "✓";
+  width: 20px;
+  position: relative;
+  margin-right: 5px;
+  color: rgb(0, 255, 21);
+  text-align: center;
 }
 .todo__body--container ul .task__container span {
   padding: 0 0 0 10px;
@@ -150,7 +162,7 @@ button.todo__header--button:hover {
   font-weight: bold;
 }
 .todo__body--container ul .task__container span:hover {
-  color: rgb(255, 198, 198);
+  color: rgb(255, 0, 0);
   transition: 0.2s ease;
   filter: brightness(1.2);
 }

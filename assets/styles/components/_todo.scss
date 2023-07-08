@@ -49,11 +49,7 @@ button.todo__header--button{
     border-radius: 10px;
     margin: 10px 0;
 
-    .completed{
-        color: $lightGrayColor !important;
-        text-decoration: line-through;
-        background-color: $grayColor !important;
-    }
+
 
     ul{
         width: 100%;
@@ -75,11 +71,30 @@ button.todo__header--button{
                 border-radius: 10px;
                 color: white;
                 background: $accentColor;
-                justify-content: space-between;
     
                 &:hover{
                     filter: brightness(1.2);
                     @include hover();
+                }
+
+                &::before{
+                    content: "\274C";
+                    width: 20px;
+                    margin-right: 5px;
+                }
+
+                &.completed{
+                    color: $lightGrayColor !important;
+                    background-color: $grayColor !important;
+            
+                    &::before{
+                        content:"\2713";
+                        width: 20px;
+                        position: relative;
+                        margin-right: 5px;
+                        color: $confirmColor;
+                        text-align: center;
+                    }
                 }
             }
 
@@ -97,7 +112,7 @@ button.todo__header--button{
                 font-weight: bold;
 
                 &:hover{
-                    color: rgb(255, 198, 198);
+                    color: rgb(255, 0, 0);
                     @include hover();
                 }
             }
