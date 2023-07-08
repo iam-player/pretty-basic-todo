@@ -1,16 +1,19 @@
 @import '../base/variables';
 @import '../util/mixins';
 
+h1{
+    color: $lightColor;
+    font-size: 20px;
+    margin: 30px 0;
+}
 
 .todo__header--container{
     height: 50px;
     width: 350px;
     background-color: $darkColor;
-    margin-bottom: 10px;
     border-radius: 10px;;
     display: flex;
     flex-direction: row;
-
 }
 
 .todo__header--input{
@@ -42,10 +45,12 @@ button.todo__header--button{
     display: flex;
     background-color: $darkColor;
     border-radius: 10px;
+    margin: 10px 0;
 
     .completed{
         color: #717171;
         text-decoration: line-through;
+        background-color: $grayColor !important;
     }
 
     ul{
@@ -67,7 +72,7 @@ button.todo__header--button{
                 margin: 10px 0;
                 border-radius: 10px;
                 color: white;
-                background: $grayColor;
+                background: $accentColor;
                 justify-content: space-between;
     
                 &:hover{
@@ -77,7 +82,7 @@ button.todo__header--button{
             }
 
             span{
-                padding: 5px 10px;
+                padding: 0 0 0 10px;
                 position: relative;
                 user-select: none;
                 border-radius: 50%;
@@ -98,6 +103,24 @@ button.todo__header--button{
             button{
                 @include accentButton();
             }
+        }
+    }
+}
+
+.todo__footer--container{
+    height: 50px;
+    width: 350px;
+    border-radius: 10px;;
+    @include flexCenter();
+    flex-direction: row;
+
+    .todo__footer--button{
+        font-size: 16px;
+        color: white;
+
+        &:hover{
+            @include hover();
+            color: red;
         }
     }
 }
