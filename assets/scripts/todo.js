@@ -47,7 +47,7 @@ add.addEventListener("click", (e) => {
 
         let heyWakeUp = document.getElementById("audio");
         heyWakeUp.play();
-        
+
         setTimeout(function(){
             input.classList.remove("bounce");
         }, 2000);
@@ -85,7 +85,7 @@ removeAll.addEventListener("click", () =>{
 modalConfirm.addEventListener("click", (e) =>{
     e.preventDefault();
     modal.classList.remove('show');
-    removeAllgiFromLocal();
+    removeAllFromLocal();
     loadTasksFromLocal();
 });
 
