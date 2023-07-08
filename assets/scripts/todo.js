@@ -40,8 +40,16 @@ add.addEventListener("click", (e) => {
         input.value = "";
         loadTasksFromLocal();
     } else {
-        throw new Error ("User input is empty! Cannot add a task.");
+        input.classList.add("error");
+        input.classList.add("bounce");
+        setTimeout(function(){
+            input.classList.remove("bounce");
+        }, 2000);
     }
+});
+
+input.addEventListener("keydown", (e) =>{
+    input.classList.remove("error");
 });
 
 tasksList.addEventListener("click", (e) => {
