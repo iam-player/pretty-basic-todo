@@ -20,6 +20,11 @@ h1{
     border-radius: 10px;;
     display: flex;
     flex-direction: row;
+
+    form {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
 .todo__header--input{
